@@ -1,0 +1,9 @@
+body {
+    background-image: linear-gradient(to right, aqua , #007bff);
+}
+
+.heading { 
+    background: linear-gradient(to right, #e03f97, #ca6a0f,  #007bff, aqua);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

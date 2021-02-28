@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemons</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body >
+
+
+    <main class="basic-content">
+        <div class="container-lg d-flex flex-column">
+            <h1 class="text-center text-white mb-3 heading">Pokemons</h1>
+            <div class="d-flex justify-content-center align-items-center mb-3 ">
+                <form action="" class="form-inline  text-center">
+                    <label for="search" class="mr-2 d-inline-block text-white mt-2">Search: </label>
+                    <input type="text" id="search" class="form-control my-2 mr-3" placeholder="Search by name:">
+                    <button type="submit" class="btn btn-secondary find-button">Search</button>
+                </form> 
+            </div>
+            <h3 class="text-center font-weight-bold text-light heading">Kinds</h3>
+            <div class="btn-group d-flex justify-content-center align-items-center my-3 mb-5 flex-wrap">
+                <button type="button" class="btn btn-success m-2 rounded text-light">Grass</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Poison</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Ice</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Rock</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Flying</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Fire</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Psychic</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Water</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Ground</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Bug</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Normal</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Electric</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Fighting</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Ghost</button>
+                <button type="button" class="btn btn-success m-2 rounded text-light">Dragon</button>
+              </div>
+            <ul class="pokemons_list js-pokemons_list list-group-fluish d-flex flex-wrap justify-content-center list-unstyled">
+
+            </ul>
+        </div>
+    </main>
+
+    <!-- MODAL -->
+    
+    <div class="modal fade" tabindex="-1" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="h3 pokemon_info pokemon_info-name"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="d-flex">
+                        <b class="mr-2 text-info">Height:</b>
+                        <p class="m-0 mb-3 pokemon_info pokemon_info-height"></p>
+                    </div>
+
+                    <div class="d-flex ">
+                        <b class="mr-2 text-info">Weight:</b>
+                        <p class="m-0 mb-3 pokemon_info pokemon_info-weight"></p>
+                    </div>
+
+                    <div class="d-flex">
+                        <b class="mr-2 text-info">Candy:</b>
+                        <p class="m-0 mb-3 pokemon_info pokemon_info-candy"></p>
+                    </div>
+
+                    <div class="d-flex">
+                        <b class="mr-2 text-info">Egg:</b>
+                        <p class="m-0 mb-3 pokemon_info pokemon_info-egg"></p>
+                    </div>
+
+                    <div class="d-flex">
+                        <b class="mr-2 text-info">Spawn chance:</b>
+                        <p class="m-0 mb-3 pokemon_info pokemon_info-spawn-chance"></p>
+                    </div>
+
+                    <div class="d-flex">
+                        <b class="mr-2 text-info">Avg spawn:</b>
+                        <p class="m-0 mb-3 pokemon_info pokemon_info-avg-spawn"></p>
+                    </div>
+
+                    <div class="d-flex">
+                        <b class="mr-2 text-info">Weaknesses:</b>
+                        <p class="m-0 mb-3 pokemon_info pokemon_info-weaknesses"></p>
+                    </div>
+
+                    <div class="d-flex">
+                        <b class="mr-2 text-info">Multipliers:</b>
+                        <p class="m-0 mb-3 pokemon_info pokemon_info-multipliers"></p>
+                    </div>
+
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <p class="font-weight-bold">Thank You!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- TEMPLATE -->
+
+    <template class="js-pokemon_template">
+        <li class="pokemon pokemons_item list-group-item p-2 mb-3 mx-4 rounded-sm">
+
+            <div class="card" style="width: 13rem;">
+                <div class="d-flex align-items-center bg-primary">
+                    <img class="pokemon_img rounded-sm" src="" alt="pokemon" width="150" height="150">
+                </div>
+                <div class="card-body">
+                    <p class="pokemon_name m-0 mb-2 font-weight-bold text-secondary text-center"></p>
+                    <p class="pokemon_type m-0 mb-2 font-weight-bold">Type: </p>
+                    <button type="submit" data-toggle="modal" data-target="#modal" class="btn btn-outline-info btn-block pokemon_info">
+                        Show more
+                    </button>
+                </div>
+            </div>
+
+        </li>
+    </template>
+    
+    <script src="./js/pokemons.js"></script>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
